@@ -1,0 +1,51 @@
+# TPX 配置文件
+# 传送插件配置
+
+# 消息前缀
+prefix: '&eTheUrEyesServer &f&l>>> '
+
+# 传送请求相关消息
+messages:
+  # 传送请求发送方消息
+  request-sent: '&a已向 &e{player} &a发送传送请求，等待对方接受...'
+  request-sent-expired: '&c向 &e{player} &c发送的传送请求已过期'
+  request-sent-accepted: '&a&e{player} &a已接受您的传送请求，正在传送...'
+  request-sent-rejected: '&c&e{player} &c拒绝了您的传送请求'
+  
+  # 传送请求接收方消息
+  request-received: '&e{player} &a请求传送到您的位置'
+  request-received-expired: '&c来自 &e{player} &c的传送请求已过期'
+  request-received-accepted: '&a您已接受 &e{player} &a的传送请求'
+  request-received-rejected: '&c您已拒绝 &e{player} &c的传送请求'
+  
+  # 点击提示
+  click-accept: '&a[接受]'
+  click-reject: '&c[拒绝]'
+  hover-accept: '&a点击接受传送请求'
+  hover-reject: '&c点击拒绝传送请求'
+  
+  # 错误消息
+  no-pending-requests: '&c您没有待处理的传送请求'
+  player-not-found: '&c找不到玩家 &e{player}'
+  self-teleport: '&c您不能传送到自己的位置'
+  already-sent-request: '&c您已经向 &e{player} &c发送了传送请求'
+  cooldown-active: '&c您需要等待 &e{time} &c秒后才能再次发送传送请求'
+  player-offline: '&c玩家 &e{player} &c已离线'
+
+# 传送请求设置
+settings:
+  # 传送请求过期时间（秒）
+  request-timeout: 60
+  
+  # 传送请求冷却时间（秒）
+  request-cooldown: 30
+  
+  # 是否启用点击接受/拒绝功能
+  enable-click-buttons: true
+  
+  # 传送前倒计时（秒），设置为0则立即传送
+  teleport-delay: 3
+  
+  # 传送延迟消息
+  teleport-countdown-message: '&a将在 &e{time} &a秒后传送...'
+  teleport-success-message: '&a传送成功！'
