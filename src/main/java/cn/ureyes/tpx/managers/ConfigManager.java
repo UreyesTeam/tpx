@@ -6,6 +6,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 
 /**
  * 配置管理器，负责加载和管理配置文件
+ * 此类方法由ChatGPT生成 仅供参考
  */
 public class ConfigManager {
     private final Tpx plugin;

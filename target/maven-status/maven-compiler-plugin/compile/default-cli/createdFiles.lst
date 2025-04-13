@@ -1,0 +1,5 @@
+cn\ureyes\tpx\utils\MessageUtils.class
+cn\ureyes\tpx\managers\TeleportManager.class
+cn\ureyes\tpx\commands\TeleportCommand.class
+cn\ureyes\tpx\managers\ConfigManager.class
+cn\ureyes\tpx\Tpx.class

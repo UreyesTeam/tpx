@@ -15,21 +15,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * 传送命令处理器
- */
+
 public class TeleportCommand implements CommandExecutor, TabCompleter {
     private final Tpx plugin;
     private final ConfigManager configManager;
     private final TeleportManager teleportManager;
     private final List<String> subCommands = Arrays.asList("accept", "reject", "help");
 
-    /**
-     * 构造函数
-     * @param plugin 插件实例
-     * @param configManager 配置管理器
-     * @param teleportManager 传送管理器
-     */
     public TeleportCommand(Tpx plugin, ConfigManager configManager, TeleportManager teleportManager) {
         this.plugin = plugin;
         this.configManager = configManager;
@@ -45,8 +37,8 @@ public class TeleportCommand implements CommandExecutor, TabCompleter {
 
         Player player = (Player) sender;
 
-        // 处理子命令
         if (args.length > 0) {
+            // .cy xxxxx
             String subCommand = args[0].toLowerCase();
 
             switch (subCommand) {
@@ -62,7 +54,7 @@ public class TeleportCommand implements CommandExecutor, TabCompleter {
             }
         }
 
-        // 处理传送请求
+        //handle tp event
         if (args.length == 1) {
             String targetName = args[0];
             Player target = Bukkit.getPlayer(targetName);
@@ -76,15 +68,12 @@ public class TeleportCommand implements CommandExecutor, TabCompleter {
             return true;
         }
 
-        // 如果没有参数，显示帮助信息
+
         sendHelpMessage(player);
         return true;
     }
 
-    /**
-     * 发送帮助信息
-     * @param player 玩家
-     */
+    //help
     private void sendHelpMessage(Player player) {
         player.sendMessage(configManager.getPrefix() + "§e===== §f传送命令帮助 §e=====");
         player.sendMessage(configManager.getPrefix() + "§f/chuansong <玩家名> §7- §f发送传送请求");
@@ -102,16 +91,13 @@ public class TeleportCommand implements CommandExecutor, TabCompleter {
 
         if (args.length == 1) {
             List<String> completions = new ArrayList<>();
-            
-            // 添加子命令
+
+
             completions.addAll(subCommands);
-            
-            // 添加在线玩家
             completions.addAll(Bukkit.getOnlinePlayers().stream()
                     .map(Player::getName)
                     .collect(Collectors.toList()));
-            
-            // 过滤匹配的结果
+
             return completions.stream()
                     .filter(s -> s.toLowerCase().startsWith(args[0].toLowerCase()))
                     .collect(Collectors.toList());

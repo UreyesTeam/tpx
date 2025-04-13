@@ -6,9 +6,7 @@ import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.entity.Player;
 
-/**
- * 消息工具类，用于发送可点击的消息
- */
+
 public class MessageUtils {
 
     /**
@@ -25,23 +23,23 @@ public class MessageUtils {
                                            String acceptHover, String rejectHover) {
         TextComponent baseMessage = new TextComponent(message);
         
-        // 创建接受按钮
+        //accept
         TextComponent acceptButton = new TextComponent(" " + acceptText + " ");
         acceptButton.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/cs accept"));
         acceptButton.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, 
                 new ComponentBuilder(acceptHover).create()));
         
-        // 创建拒绝按钮
+        //reject
         TextComponent rejectButton = new TextComponent(" " + rejectText + " ");
         rejectButton.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/cs reject"));
         rejectButton.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, 
                 new ComponentBuilder(rejectHover).create()));
         
-        // 组合消息
+        //combine
         baseMessage.addExtra(acceptButton);
         baseMessage.addExtra(rejectButton);
         
-        // 发送消息
+        //sned
         target.spigot().sendMessage(baseMessage);
     }
 }

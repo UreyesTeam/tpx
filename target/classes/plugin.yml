@@ -1,0 +1,15 @@
+name: tpx
+version: '1.0-SNAPSHOT'
+main: cn.ureyes.tpx.Tpx
+api-version: '1.21'
+description: 一个简单的传送插件
+authors: [ureyes]
+
+commands:
+  chuansong:
+    description: 发送传送请求
+    usage: /chuansong <玩家名>
+    aliases: [cs]
+  cs:
+    description: 传送命令
+    usage: /cs <玩家名/accept/reject/help>
