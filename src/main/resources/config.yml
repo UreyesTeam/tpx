@@ -21,16 +21,20 @@ messages:
   # ClickMsg
   click-accept: '&a[接受]'
   click-reject: '&c[拒绝]'
-  hover-accept: '&a点击接受传送请求'
-  hover-reject: '&c点击拒绝传送请求'
+  hover-accept: '&a单击接受传送请求'
+  hover-reject: '&c单击拒绝传送请求'
   
   # ErrorMsg
   no-pending-requests: '&c您没有待处理的传送请求'
-  player-not-found: '&c找不到玩家 &e{player}'
-  self-teleport: '&c您不能传送到自己的位置'
-  already-sent-request: '&c您已经向 &e{player} &c发送了传送请求'
+  player-not-found: '&c玩家不在线或找不到玩家 &e{player}'
+  self-teleport: '&c您不能传送自己！'
+  already-sent-request: '&c您已经向 &e{player} &c发送了传送请求，请等待对方响应'
   cooldown-active: '&c您需要等待 &e{time} &c秒后才能再次发送传送请求'
   player-offline: '&c玩家 &e{player} &c已离线'
+
+  # 传送延迟消息
+  teleport-countdown-message: '&a将在 &e{time} &a秒后传送...'
+  teleport-success-message: '&a传送成功！'
 
 # 传送请求设置
 settings:
@@ -46,6 +50,4 @@ settings:
   # 传送前倒计时（秒），0可以直接传
   teleport-delay: 3
   
-  # 传送延迟消息
-  teleport-countdown-message: '&a将在 &e{time} &a秒后传送...'
-  teleport-success-message: '&a传送成功！'
+
